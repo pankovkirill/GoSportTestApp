@@ -1,0 +1,8 @@
+<resources>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="horizontal_margin">10dp</dimen>
+    <dimen name="icons_default_size">25dp</dimen>
+    <dimen name="default_banners_height">150dp</dimen>
+    <dimen name="vertical_padding">20dp</dimen>
+</resources>

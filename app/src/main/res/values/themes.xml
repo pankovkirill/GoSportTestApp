@@ -1,0 +1,25 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Base.Theme.GoSportTestApp" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="Theme.GoSportTestApp" parent="Base.Theme.GoSportTestApp" />
+
+    <style name="ChipStyle" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="chipCornerRadius">10dp</item>
+        <item name="elevation">20dp</item>
+        <item name="android:layout_width">90dp</item>
+        <item name="fontFamily">@font/sfuidisplay</item>
+        <item name="android:shadowColor">@color/shadow_color</item>
+        <item name="android:shadowRadius">10</item>
+        <item name="chipStrokeColor">@color/white</item>
+        <item name="chipSurfaceColor">@color/white</item>
+        <item name="chipBackgroundColor">@color/bg_chip_state_list</item>
+        <item name="android:textColor">@color/text_chip_state_list</item>
+        <item name="rippleColor">@color/chip_ripple</item>
+        <item name="android:checkable">true</item>
+        <item name="chipStartPadding">10dp</item>
+        <item name="chipEndPadding">10dp</item>
+    </style>
+</resources>

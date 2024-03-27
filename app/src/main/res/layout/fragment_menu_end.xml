@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fragment_background_color"
+    app:layoutDescription="@xml/fragment_menu_scene">
+
+    <ImageView
+        android:id="@+id/qrCodeImageView"
+        android:layout_width="@dimen/icons_default_size"
+        android:layout_height="@dimen/icons_default_size"
+        android:layout_marginEnd="@dimen/horizontal_margin"
+        android:src="@drawable/ic_qr"
+        app:layout_constraintBottom_toBottomOf="@id/cityTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/cityTextView" />
+
+    <TextView
+        android:id="@+id/cityTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/horizontal_margin"
+        android:paddingVertical="@dimen/vertical_padding"
+        android:text="Москва"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        app:layout_constraintBottom_toTopOf="@id/categoriesHorizontalScrollView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/arrowDownImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/horizontal_margin"
+        android:src="@drawable/baseline_keyboard_arrow_down_24"
+        app:layout_constraintBottom_toBottomOf="@id/cityTextView"
+        app:layout_constraintStart_toEndOf="@id/cityTextView"
+        app:layout_constraintTop_toTopOf="@id/cityTextView" />
+
+
+    <HorizontalScrollView
+        android:id="@+id/bannersImageView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/default_banners_height"
+        android:alpha="0"
+        android:scrollbars="none"
+        app:layout_constraintTop_toTopOf="@id/categoriesHorizontalScrollView">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/horizontal_margin"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="@dimen/horizontal_margin"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/blank_banner" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/blank_banner" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+
+    <HorizontalScrollView
+        android:id="@+id/categoriesHorizontalScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toTopOf="@id/foodListRecyclerView"
+        app:layout_constraintTop_toBottomOf="@id/cityTextView">
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/categoriesChipGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="@dimen/horizontal_margin" />
+    </HorizontalScrollView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/foodListRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/categoriesHorizontalScrollView"
+        tools:listitem="@layout/main_fragment_food_recycler_item" />
+</androidx.constraintlayout.motion.widget.MotionLayout>
